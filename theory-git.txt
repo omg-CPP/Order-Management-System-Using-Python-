@@ -24,5 +24,8 @@ git commit -m "Initial Commit"
 git branch -M main -> Rename your branch to main
 git branch :: * main
 git push -u origin main :: The -u connects your local main branch with GitHub's main branch
-
+git status
+-> On branch main
+-> Your branch is up to date with 'origin/main'.
+-> nothing to commit, working tree clean
 
