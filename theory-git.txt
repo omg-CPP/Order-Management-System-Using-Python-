@@ -19,6 +19,10 @@ git remote add origin https://github.com/omg-CPP/Order-Management-System-Using-P
 git remote -v :: check that it was added
 origin  https://github.com/omg-CPP/Order-Management-System-Using-Python-.git (fetch)
 origin  https://github.com/omg-CPP/Order-Management-System-Using-Python-.git (push)
+git add theory-git.txt
+git commit -m "Initial Commit"
 git branch -M main -> Rename your branch to main
+git branch :: * main
+git push -u origin main :: The -u connects your local main branch with GitHub's main branch
 
 
