@@ -177,4 +177,7 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8000,
         reload=settings.DEBUG,
+        # Watch app/ only. Watching the whole repo (including venv) causes
+        # reload storms on Windows, especially under OneDrive.
+        reload_dirs=["app"] if settings.DEBUG else None,
     )

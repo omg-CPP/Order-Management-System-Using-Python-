@@ -93,12 +93,14 @@ then run the script again.
 Use `python -m uvicorn` so the virtualenv interpreter is used.
 
 ```bash
-# Development (auto-reload)
-python -m uvicorn app.main:app --reload --port 8000
+# Development — watch app/ only (do not watch venv)
+python -m uvicorn app.main:app --reload --reload-dir app --port 8000
 
 # Production
 python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
+
+On Windows, a bare `--reload` watches the whole folder, including `venv`. Pip or MySQL-connector files then trigger a reload loop (`CancelledError` / `KeyboardInterrupt` in the lifespan). `--reload-dir app` avoids that. Prefer a local disk over OneDrive (`...\OneDrive\Desktop\OMS`).
 
 - API: http://localhost:8000
 - Swagger: http://localhost:8000/docs
@@ -207,6 +209,19 @@ Order-Management-System-Using-Python-/
 ```
 
 Compared with five-circles-backend: same FastAPI + `.env` + SQL migrations + pool + layered folders. This project does not include JWT, Twilio, or rate limiting.
+
+## Troubleshooting
+
+**`CancelledError` / `KeyboardInterrupt` in the lifespan, plus `WatchFiles detected changes in 'venv\...'`**
+
+The app started fine (`Database pool ... initialized`). Uvicorn `--reload` then watched `venv` and killed the worker on every pip/package file touch. This is common on Windows, and worse if the project lives under OneDrive.
+
+```bash
+# Stop the looping server (Ctrl+C), then:
+python -m uvicorn app.main:app --reload --reload-dir app --port 8000
+```
+
+Or skip reload: `python -m uvicorn app.main:app --port 8000`.
 
 ## Author
 
