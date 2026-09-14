@@ -1,0 +1,24 @@
+-- Yes — this error usually means MySQL is either not installed, or its bin folder is not added to Windows PATH.
+-- where mysql -> check whether mysql.exe exsist or not
+-- Check the MySQL installation folder
+-- mysql  Ver 8.0.46 for Win64 on x86_64 (MySQL Community Server - GPL)
+-- add MySQL to Path
+-- C:\Program Files\MySQL\MySQL Server 8.0\bin
+-- mysql -u root -p
+-- and enter your MySQL password
+-- mysql> exit
+-- mysql -> \c to come out
+
+-- SQL → the language
+-- MySQL → the database management system
+-- MySQL CLI → command-line interface for interacting with MySQL
+-- VS Code → code editor
+
+-- Option 1: CMD / VS Code Terminal
+-- Option 2: VS Code extension
+-- Both ultimately send SQL to the same MySQL Server
+
+mysql --version
+mysql -u root -p
+mysql> SHOW VARIABLES LIKE 'port';   # -> PORT 3306
+

@@ -1,0 +1,22 @@
+
+python --version
+--> Python 3.13.7
+
+python -m venv omenv
+--> (omenv) PS C:\Users\hp\OneDrive\Desktop\OMS>
+
+omenv\Scripts\Activate.ps1
+--> activate your virtual env
+
+deactivate
+--> deactivate your virtual env
+
+pip install mysql-connector-python
+--> connect mysql to python
+
+python.exe -m pip install --upgrade pip
+--> pip upgrade
+
+python -m pip freeze > requirements.txt
+--> to create a requirements.txt file
+

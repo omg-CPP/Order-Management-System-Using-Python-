@@ -1,0 +1,62 @@
+               CLIENT
+                  ↓
+          ┌──────────────┐
+          │   main.py    │
+          │ Presentation │
+          └──────┬───────┘
+                 ↓
+          ┌──────────────┐
+          │ services.py  │
+          │ Business     │
+          │ Logic        │
+          └──────┬───────┘
+                 ↓
+          ┌──────────────┐
+          │repositories.py│
+          │ Data Access   │
+          └──────┬───────┘
+                 ↓
+          ┌──────────────┐
+          │ database.py  │
+          │ DB Connection│
+          └──────┬───────┘
+                 ↓
+               MySQL
+
+
+main.py          → Waiter
+services.py      → Head Chef
+repositories.py  → Store Manager
+database.py      → Database/Transaction Manager
+MySQL            → Storage
+models.py        → Food/order representation
+
+
+Receive order
+      ↓
+Check menu item
+      ↓
+Check stock
+      ↓
+Calculate price
+      ↓
+Reduce stock
+      ↓
+Create order
+      ↓
+Save order items
+      ↓
+Commit transaction
+      ↓
+Return response
+
+
+
+schema.sql
+
+burger = MenuItem(1, "Burger", 100, 10)
+burger.id = 1
+burger.name = "Burger"
+burger.price = 100
+burger.available_stock = 10
+

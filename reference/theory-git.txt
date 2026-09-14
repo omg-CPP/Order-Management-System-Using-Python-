@@ -1,0 +1,31 @@
+
+git --version 
+o/p -> git version 2.55.0.windows.5
+
+git config --global user.name
+Om Gupta
+git config --global user.email
+omgbmw100@gmail.com
+
+git config --global --list
+user.name=Om Gupta
+user.email=omgbmw100@gmail.com
+
+
+# Initialize the folder as a Git repository
+git init
+git status
+git remote add origin https://github.com/omg-CPP/Order-Management-System-Using-Python-.git
+git remote -v :: check that it was added
+origin  https://github.com/omg-CPP/Order-Management-System-Using-Python-.git (fetch)
+origin  https://github.com/omg-CPP/Order-Management-System-Using-Python-.git (push)
+git add theory-git.txt
+git commit -m "Initial Commit"
+git branch -M main -> Rename your branch to main
+git branch :: * main
+git push -u origin main :: The -u connects your local main branch with GitHub's main branch
+git status
+-> On branch main
+-> Your branch is up to date with 'origin/main'.
+-> nothing to commit, working tree clean
+
